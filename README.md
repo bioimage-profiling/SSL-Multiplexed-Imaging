@@ -10,7 +10,7 @@ The resulting feature representations can be further aggregated to match patient
 
 Each subdirectory contains one method.
 
-<img src="./images/framework.png" alt="Framework" width="50%" />
+<img src="./images/framework.png" alt="Framework" width="100%" />
 
 #### Requirements
 
