@@ -1,10 +1,16 @@
 # SSL-Multiplexed-Imaging
 Code for Atarsaikhan et al. (2025): ["Self-supervised learning enables unbiased patient characterization from multiplexed microscopy images"](https://www.biorxiv.org/content/10.1101/2025.03.05.640729v1).
 
-- [DINO](https://openaccess.thecvf.com/content/ICCV2021/html/Caron_Emerging_Properties_in_Self-Supervised_Vision_Transformers_ICCV_2021_paper), [MAE](https://openaccess.thecvf.com/content/CVPR2022/html/He_Masked_Autoencoders_Are_Scalable_Vision_Learners_CVPR_2022_paper), [SIMCLR](https://arxiv.org/abs/2002.05709), and [VICRegL](https://arxiv.org/abs/2210.01571) methods are used for Level-1 training.
-- [DINO](https://openaccess.thecvf.com/content/ICCV2021/html/Caron_Emerging_Properties_in_Self-Supervised_Vision_Transformers_ICCV_2021_paper) and [MAE](https://openaccess.thecvf.com/content/CVPR2022/html/He_Masked_Autoencoders_Are_Scalable_Vision_Learners_CVPR_2022_paper) methods are used for Level-2 training.
+The framework creates hierarchical representations of multiplexed immunofluorescence images from tissue microarray (TMA) cancer samples using self-supervised learning (SSL) backbones.
+It operates on two levels:
+- Level 1: Small patch crops from the original TMA spot images (~4000 × ~4000 pixels) are encoded. [DINO](https://openaccess.thecvf.com/content/ICCV2021/html/Caron_Emerging_Properties_in_Self-Supervised_Vision_Transformers_ICCV_2021_paper), [MAE](https://openaccess.thecvf.com/content/CVPR2022/html/He_Masked_Autoencoders_Are_Scalable_Vision_Learners_CVPR_2022_paper), [SIMCLR](https://arxiv.org/abs/2002.05709), and [VICRegL](https://arxiv.org/abs/2210.01571) methods are used.
+- Level 2: The patch-level feature representations are aggregated using an SSL method to generate a single feature representation for each TMA spot. [DINO](https://openaccess.thecvf.com/content/ICCV2021/html/Caron_Emerging_Properties_in_Self-Supervised_Vision_Transformers_ICCV_2021_paper) and [MAE](https://openaccess.thecvf.com/content/CVPR2022/html/He_Masked_Autoencoders_Are_Scalable_Vision_Learners_CVPR_2022_paper) methods are used.
+
+The resulting feature representations can be further aggregated to match patients' clinical records.
 
 Each subdirectory contains one method.
+
+<img src="./images/framework.png" alt="Framework" width="50%" />
 
 #### Requirements
 
